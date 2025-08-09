@@ -41,7 +41,7 @@
 
 - 독립 변수 x의 행렬을 X라고 하였을 때, 독립 변수의 개수가 n개이고 데이터의 개수가 m인 행렬 X는 다음과 같음
     
-    ![image.png](image 1.png)
+    ![image.png](image1.png)
     
     - 머신 러닝에서 하나의 데이터, 하나의 행을 샘플(Sample)이라고 부름
     - 종속 변수 y를 예측하기 위한 각각의 독립 변수 x를 특성(Feature)라고 부름
@@ -52,7 +52,7 @@
 - 정확도는 맞춘 결과와 틀린 결과에 대한 세부적인 내용을 알려주지 않음 ⇒ 이를 위해 혼동 행렬 사용
     - ex) 양성(Positive)과 음성(Negative)를 구분하는 이진 분류가 있다고 가정하면 혼동 행렬은 다음과 같음
         
-        ![image.png](image 2.png)
+        ![image.png](image2.png)
         
         - True: 정답을 맞춘 경우
         - False: 정답을 맞추지 못한 경우
@@ -65,13 +65,13 @@
 - 정밀도(Precision)
     - 양성이라고 대답한 전체 케이스에 대한 TP의 비율
         
-        ![image.png](image 3.png)
+        ![image.png](image3.png)
         
 - 재현률(Recall)
     - 실제값이 양성인 데이터의 전체 개수에 대해서 TP의 비율
     - 양성인 데이터 중에서 얼마나 양성인지를 예측(재현)했는지 나타냄
         
-        ![image.png](image 4.png)
+        ![image.png](image4.png)
         
 
 ## 6. 과적합(Overfitting)과 과소 적합(Underfitting)
@@ -99,14 +99,14 @@
 - 시그모이드 함수(Sigmoid Function)와 기울기 소실
     - 시그모이드 함수를 사용한 어떤 인공 신경망이 있다고 가정
         
-        ![image.png](image 5.png)
+        ![image.png](image5.png)
         
         - 인공 신경망은 입력에 대해서 순전파(forward propagation) 연산 진행
         - 순전파 연산을 통해 나온 예측값과 실제값의 오차를 손실 함수(loss function)을 통해 계산
         - 손실(loss)를 미분을 통해서 기울기(gradient)를 구하고, 이를 통해 역전파(back propagation) 수행
     - 시그모이드 함수의 문제점은 미분을 해서 기울기(gradient)를 구할 때 발생
         
-        ![image.png](image 6.png)
+        ![image.png](image6.png)
         
         - 시그모이드 함수의 출력값이 0 또는 1에 가까워지면, 그래프의 기울기가 완만(0에 가까워짐)
         - 기울기 소실(Vanishing Gradient): 역전파 과정에서 0에 아주 가까운 아주 작은 기울기가 곱해지면 앞단에는 기울기가 잘 전달되지 않음
@@ -114,14 +114,14 @@
         - 시그모이드 함수를 은닉층에서 사용하는 것은 지양
 - 하이퍼볼릭탄젠트 함수(Hyperbolic tangent function)
     
-    ![image.png](image 7.png)
+    ![image.png](image7.png)
     
     - 함수(tanh) 입력값을 -1과 1사이의 값으로 변환
     - 하이퍼볼릭탄젠트 함수도 -1과 1에 가까운 출력값을 출력할 때, 시그모이드 함수와 같은 문제 발생
     - 시그모이드 함수(0 ~ 1)와 달리 출력값이 0을 중심으로 하고 있어 반환값의 변화폭이 큼 ⇒ 시그모이드 함수보다 기울기 소실 증상이 적은 편
 - 렐루 함수(ReLU) f(x) = max(0, x)
     
-    ![image.png](image 8.png)
+    ![image.png](image8.png)
     
     - 음수를 입력하면 0을 출력하고, 양수를 입력하면 입력값을 그대로 반환
     - 특정 양수값에 수렴하지 않으므로 깊은 신경망에서 시그모이드 함수보다 훨씬 더 잘 작동
@@ -129,13 +129,13 @@
     - 죽은 렐루(dying ReLU)입력값이 음수면 기울기 0 ⇒ 해당 뉴런을 다시 회생하는 것은 매우 어려움
 - 리키 렐루(Leaky ReLU) f(x) = max(ax, x)
     
-    ![image.png](image 9.png)
+    ![image.png](image9.png)
     
     - 입력값이 음수일 경우에 0이 아니라 0.001과 같은 매우 작은 수를 반환
     - a는 하이퍼파라미터로 Leaky(’새는’) 정도를 결정하며 일반적으로 0.01의 값을 가짐
 - 소프트맥스 함수(Softmax Function)
     
-    ![image.png](image 10.png)
+    ![image.png](image10.png)
     
     - 시그모이드 함수처럼 출력층의 뉴런에서 주로 사용
     - 시그모이드 함수가 두 가지 선택지 중 하나를 고르는 이진 분류 (Binary Classification) 문제에 사용된다면 세 가지 이상의 (상호 배타적인) 선택지 중 하나를 고르는 다중 클래스 분류(MultiClass Classification) 문제에 주로 사용
