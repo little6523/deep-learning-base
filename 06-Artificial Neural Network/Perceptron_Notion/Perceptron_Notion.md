@@ -30,7 +30,7 @@
     ![image.png](image%204.png)
     
 
-## 3. 다층 퍼셉트론(MultiLayter Perceptron, MLP)
+## 3. 다층 퍼셉트론(MultiLayer Perceptron, MLP)
 
 - 단층 퍼셉트론은 입력층과 출력층만 존재한다면, 다층 퍼셉트론은 중간에 층을 더 추가한 형태
     - 입력층과 출력층의 중간에 위치하는 층을 **은닉층(hidden layer)**이라고 부름
